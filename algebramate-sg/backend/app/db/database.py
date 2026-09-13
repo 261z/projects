@@ -1,0 +1,34 @@
+import sqlite3
+from pathlib import Path
+
+from ..config import settings
+
+
+def database_path() -> Path:
+    raw = settings.database_url.removeprefix("sqlite:///")
+    path = Path(raw)
+    if not path.is_absolute():
+        path = Path(__file__).resolve().parents[2] / path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def get_connection() -> sqlite3.Connection:
+    connection = sqlite3.connect(database_path())
+    connection.row_factory = sqlite3.Row
+    connection.execute("PRAGMA foreign_keys = ON")
+    return connection
+
+
+def init_db() -> None:
+    with get_connection() as connection:
+        connection.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS skills (id TEXT PRIMARY KEY, topic TEXT NOT NULL, subtopic TEXT NOT NULL, school_level TEXT NOT NULL, prerequisite_skill_id TEXT);
+            CREATE TABLE IF NOT EXISTS student_mastery (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, skill_id TEXT NOT NULL, mastery_score REAL NOT NULL DEFAULT 0.5, current_difficulty INTEGER NOT NULL DEFAULT 1, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE(user_id, skill_id), FOREIGN KEY(user_id) REFERENCES users(id));
+            CREATE TABLE IF NOT EXISTS attempts (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, question_id TEXT NOT NULL, skill_id TEXT NOT NULL, difficulty INTEGER NOT NULL, student_answer TEXT NOT NULL, expected_answer TEXT NOT NULL, correct INTEGER NOT NULL, misconception TEXT, hints_used INTEGER NOT NULL DEFAULT 0, recommended_difficulty INTEGER, selected_difficulty INTEGER, difficulty_overridden INTEGER NOT NULL DEFAULT 0, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(user_id) REFERENCES users(id));
+            CREATE TABLE IF NOT EXISTS diagnostic_results (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, topic TEXT NOT NULL, raw_score INTEGER NOT NULL, initial_mastery REAL NOT NULL, recommended_starting_difficulty INTEGER NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(user_id) REFERENCES users(id));
+            CREATE TABLE IF NOT EXISTS diagnostic_answers (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, topic TEXT NOT NULL, question_id TEXT NOT NULL, student_answer TEXT NOT NULL, correct INTEGER NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE(user_id, topic, question_id), FOREIGN KEY(user_id) REFERENCES users(id));
+            """
+        )

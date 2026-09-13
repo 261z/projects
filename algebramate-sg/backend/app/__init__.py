@@ -1,0 +1,1 @@
+"""AlgebraMate SG backend package."""

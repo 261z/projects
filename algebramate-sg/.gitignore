@@ -1,0 +1,12 @@
+.env
+backend/.env
+backend/data/*.db
+backend/data/chroma/
+data/chroma/
+**/chroma/
+__pycache__/
+*.pyc
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
