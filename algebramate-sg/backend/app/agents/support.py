@@ -1,30 +1,48 @@
 from __future__ import annotations
 
+import logging
+import re
+
+from ..guardrails.guards import hint_is_safe
 from ..llm.provider import AgentRouterUnavailable, chat
+
+logger = logging.getLogger(__name__)
 
 
 def hint_for(question: dict, level: int) -> str:
-    if level == 1: return "What operation or pattern is at the centre of this question?"
+    if level == 1:
+        return "What operation or pattern is at the centre of this question?"
     if "factorisation" in question["skill_id"]:
-        if level == 2: return "Find two integers whose product is the constant term and whose sum is the coefficient of x."
-        return "Write the two bracket factors using your pair, then expand them to check the original expression."
-    if level == 2: return "Break the expression into one small step at a time and keep every term visible."
-    return "Try the first step now, then check whether every term has been treated consistently."
+        if level == 2:
+            return "Identify the factorisation pattern and the values that must combine to reproduce the original terms."
+        return "Write a tentative factor form, then expand it to check every original term before submitting."
+    if "expansion" in question["skill_id"]:
+        return "Distribute systematically and keep every partial product visible before collecting like terms."
+    if "linear_equations" in question["skill_id"]:
+        return "Use the same inverse operation on both sides, one step at a time."
+    return "Factorise first, then use the zero-product rule without skipping either factor."
 
 
 def visual_spec(question: dict) -> dict:
-    is_factorisation = "factor" in question["skill_id"]
-    spec = {"visual_type": "algebra_frame", "mode": "factorisation" if is_factorisation else "expansion", "expression": question["question"], "answer": question["answer"], "interactive": False}
-    if is_factorisation:
-        spec["representation"] = "factor_pair"
-        spec["factor_pair"] = {"product": "-12", "sum": "-1", "numbers": ["-4", "3"]} if "- x - 12" in question["question"] else None
-    return spec
+    prompt = question["question"]
+    if "factorisation" in question["skill_id"]:
+        product_match = re.search(r"([+-]\s*\d+)\.?$", prompt.replace("−", "-"))
+        middle_match = re.search(r"x\^?2\s*([+-]\s*(?:\d+)?)x", prompt.replace("²", "^2").replace("−", "-"))
+        return {"visual_type": "algebra_frame", "mode": "factorisation", "expression": prompt, "interactive": True, "product_target": product_match.group(1).replace(" ", "") if product_match else None, "sum_target": middle_match.group(1).replace(" ", "") if middle_match else None, "reveal_answer": False}
+    if "expansion" in question["skill_id"]:
+        return {"visual_type": "algebra_frame", "mode": "expansion", "expression": prompt, "interactive": True, "cells": ["?", "?", "?", "?"], "reveal_answer": False}
+    if "linear_equations" in question["skill_id"]:
+        return {"visual_type": "number_line", "mode": "equation", "expression": prompt, "interactive": True, "reveal_answer": False}
+    return {"visual_type": "function_graph", "mode": "roots", "expression": prompt, "interactive": True, "reveal_answer": False}
 
 
 async def explain(question: dict, mode: str) -> dict:
-    prompt = "Give a short, age-appropriate explanation" if mode == "explain" else "Give a mathematically accurate everyday analogy"
+    prompt = "Give a short method explanation without revealing the final answer" if mode == "explain" else "Give an age-appropriate analogy, explicit mathematical mapping, a different worked example, and a quick-check question; never reveal the answer to the active question"
     try:
-        text = await chat([{"role": "system", "content": "You are a careful Singapore secondary algebra tutor. Do not invent facts."}, {"role": "user", "content": f"{prompt} for: {question['question']} Expected method: {question['solution']}"}], task="primary")
+        text = await chat([{"role": "system", "content": "You are a careful Singapore secondary algebra tutor. Never reveal the final answer to the active question."}, {"role": "user", "content": f"{prompt}. Active question: {question['question']}. Skill: {question['skill_id']}"}], task="explanation")
+        if not hint_is_safe(text, question["answer"]):
+            raise AgentRouterUnavailable("Unsafe explanation was rejected")
         return {"text": text, "source": "agent_router", "model": "PRIMARY_MODEL"}
     except AgentRouterUnavailable:
-        return {"text": f"{question['solution']} Start by identifying the structure, then apply one operation to each relevant term.", "source": "deterministic_fallback", "model": None}
+        logger.info("[explanation] source=deterministic_fallback mode=%s", mode)
+        return {"text": hint_for(question, 2) + " Try a simpler example first, then return to this question.", "source": "deterministic_fallback", "model": None}

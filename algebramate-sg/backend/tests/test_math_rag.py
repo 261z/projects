@@ -12,8 +12,9 @@ def test_sympy_equation_solution() -> None:
     assert check_answer("x = 2 or x = 3", "x^2 - 5x + 6 = 0", answer_type="equation").correct
 
 
-def test_chroma_ingestion_and_filtering() -> None:
-    assert ingest_questions() >= 8
-    result = retrieve_question(skill_id="factorisation.quadratic_trinomial", difficulty=3)
-    assert result is not None
-    assert result["question_id"] == "S2-FAC-Q001"
+def test_chroma_ingestion_semantic_filtering_and_usage_split() -> None:
+    assert ingest_questions() == 40
+    practice = retrieve_question(skill_id="factorisation.quadratic_trinomial", difficulty=3, usage="practice")
+    diagnostic = retrieve_question(skill_id="factorisation.quadratic_trinomial", difficulty=3, usage="diagnostic")
+    assert practice is not None and practice["question_id"] == "P-FAC-003"
+    assert diagnostic is not None and diagnostic["question_id"] == "D-FAC-003"

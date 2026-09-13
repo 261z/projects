@@ -1,9 +1,16 @@
 import secrets
 from fastapi.testclient import TestClient
 from app.main import app
+from app.rag.ingest import load_questions
 from app.services.mastery_service import recommend_difficulty, update_mastery
 
 client = TestClient(app)
+
+
+def auth_headers(username: str, password: str) -> dict[str, str]:
+    client.post("/auth/register", json={"username": username, "password": password})
+    token = client.post("/auth/login", json={"username": username, "password": password}).json()["access_token"]
+    return {"Authorization": f"Bearer {token}"}
 
 
 def test_mastery_is_clamped_and_adaptive_rules_are_deterministic() -> None:
@@ -19,25 +26,32 @@ def test_practice_persists_progress(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr(database, "database_path", lambda: database_path)
     database.init_db()
     password = secrets.token_urlsafe(24)
-    assert client.post("/auth/register", json={"username": "learner", "password": password}).status_code == 201
-    token = client.post("/auth/login", json={"username": "learner", "password": password}).json()["access_token"]
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = auth_headers("learner", password)
     started = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "skill_id": "factorisation.quadratic_trinomial", "difficulty": 3})
     assert started.status_code == 200
-    answered = client.post("/practice/answer", headers=headers, json={"question_id": "S2-FAC-Q001", "student_answer": "(x+2)(x+3)"})
+    question = started.json()["question"]
+    answer = next(item["answer"] for item in load_questions() if item["question_id"] == question["question_id"])
+    answered = client.post("/practice/answer", headers=headers, json={"question_id": question["question_id"], "student_answer": answer, "session_id": started.json()["session_id"]})
     assert answered.status_code == 200 and answered.json()["correct"] is True
     assert client.get("/progress", headers=headers).json()["skills"][0]["skill_id"] == "factorisation.quadratic_trinomial"
 
 
-def test_practice_can_exclude_seen_question(tmp_path, monkeypatch) -> None:
+def test_practice_can_exclude_seen_question_and_generate_more(tmp_path, monkeypatch) -> None:
     from app.db import database
     database_path = tmp_path / "next-question.db"
     monkeypatch.setattr(database, "database_path", lambda: database_path)
     database.init_db()
     password = secrets.token_urlsafe(24)
-    client.post("/auth/register", json={"username": "next_student", "password": password})
-    token = client.post("/auth/login", json={"username": "next_student", "password": password}).json()["access_token"]
-    headers = {"Authorization": f"Bearer {token}"}
-    first = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "difficulty": 4}).json()["question"]
-    second = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "difficulty": 4, "exclude_question_ids": [first["question_id"]]}).json()["question"]
-    assert second["question_id"] != first["question_id"]
+    headers = auth_headers("next_student", password)
+    approved_ids = [item["question_id"] for item in load_questions() if item["topic"] == "Factorisation" and item["usage"] == "practice"]
+    first = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "difficulty": 4}).json()
+    generated = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "difficulty": 4, "exclude_question_ids": approved_ids, "session_id": first["session_id"]})
+    assert generated.status_code == 200
+    data = generated.json()
+    assert data["question"]["question_id"] not in approved_ids
+    assert data["retrieval"] in {"agent_router", "deterministic_verified_fallback"}
+    assert "answer" not in data["question"]
+    with database.get_connection() as connection:
+        assert connection.execute("SELECT verification_status FROM generated_questions WHERE question_id = ?", (data["question"]["question_id"],)).fetchone()[0] == "verified"
+    summary = client.post(f"/practice/session/{first['session_id']}/end", headers=headers).json()
+    assert summary["progress_saved"] is True

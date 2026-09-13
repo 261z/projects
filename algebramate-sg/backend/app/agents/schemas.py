@@ -28,3 +28,15 @@ class ExplanationOutput(BaseModel):
 class VisualisationOutput(BaseModel):
     visual_type: Literal["algebra_frame", "algebra_tiles", "number_line", "function_graph"]
     spec: dict
+
+
+class GeneratedQuestionOutput(BaseModel):
+    question: str = Field(min_length=5, max_length=500)
+    expected_answer: str = Field(min_length=1, max_length=200)
+    topic: Literal["Factorisation", "Expansion", "Linear equations", "Quadratics"]
+    subtopic: str = Field(min_length=1, max_length=100)
+    skill_id: str = Field(min_length=3, max_length=120)
+    difficulty: int = Field(ge=1, le=5)
+    solution: str = Field(min_length=5, max_length=1000)
+    marks: int = Field(ge=1, le=5)
+    learning_objective: str = Field(min_length=5, max_length=300)

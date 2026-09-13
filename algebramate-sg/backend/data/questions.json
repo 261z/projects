@@ -1,12 +1,704 @@
 [
-  {"question_id":"S2-FAC-Q001","school_level":"Secondary 2","topic":"Factorisation","subtopic":"Quadratic trinomial","skill_id":"factorisation.quadratic_trinomial","difficulty":3,"question":"Factorise x^2 + 5x + 6.","answer":"(x+2)(x+3)","solution":"Find two numbers whose product is 6 and sum is 5: 2 and 3.","marks":2,"learning_objective":"Factorise monic quadratic trinomials.","misconceptions":["incorrect_factor_pair","sign_error"]},
-  {"question_id":"S2-FAC-Q002","school_level":"Secondary 2","topic":"Factorisation","subtopic":"Common factor","skill_id":"factorisation.common_factor","difficulty":1,"question":"Factorise 6x + 12.","answer":"6(x+2)","solution":"The greatest common factor of 6x and 12 is 6.","marks":1,"learning_objective":"Factorise by taking out a common factor.","misconceptions":["incomplete_factorisation"]},
-  {"question_id":"S2-FAC-Q003","school_level":"Secondary 2","topic":"Factorisation","subtopic":"Difference of two squares","skill_id":"factorisation.difference_two_squares","difficulty":2,"question":"Factorise x^2 - 25.","answer":"(x-5)(x+5)","solution":"Use a^2-b^2=(a-b)(a+b), with a=x and b=5.","marks":2,"learning_objective":"Recognise and factorise a difference of two squares.","misconceptions":["sign_error","concept_unknown"]},
-  {"question_id":"S2-EXP-Q001","school_level":"Secondary 2","topic":"Expansion","subtopic":"Single bracket","skill_id":"expansion.single_bracket","difficulty":1,"question":"Expand 3(x + 4).","answer":"3x + 12","solution":"Multiply 3 by each term inside the bracket.","marks":1,"learning_objective":"Use the distributive law to expand a single bracket.","misconceptions":["distribution_error"]},
-  {"question_id":"S2-EXP-Q002","school_level":"Secondary 2","topic":"Expansion","subtopic":"Double brackets","skill_id":"expansion.double_bracket","difficulty":3,"question":"Expand (x + 2)(x + 3).","answer":"x^2 + 5x + 6","solution":"Multiply each term in the first bracket by each term in the second.","marks":2,"learning_objective":"Expand two linear brackets and collect like terms.","misconceptions":["missing_cross_terms","sign_error"]},
-  {"question_id":"S1-LIN-Q001","school_level":"Secondary 1","topic":"Linear equations","subtopic":"One-step equations","skill_id":"linear_equations.one_step","difficulty":1,"question":"Solve x + 7 = 12.","answer":"x = 5","solution":"Subtract 7 from both sides.","marks":1,"learning_objective":"Solve a one-step linear equation.","misconceptions":["inverse_operation_error"]},
-  {"question_id":"S1-LIN-Q002","school_level":"Secondary 1","topic":"Linear equations","subtopic":"Multi-step equations","skill_id":"linear_equations.multi_step","difficulty":3,"question":"Solve 3x - 4 = 11.","answer":"x = 5","solution":"Add 4, then divide both sides by 3.","marks":2,"learning_objective":"Solve a multi-step linear equation.","misconceptions":["equation_balance_error","arithmetic_error"]},
-  {"question_id":"S3-QUAD-Q001","school_level":"Secondary 3","topic":"Quadratics","subtopic":"Solving by factorisation","skill_id":"quadratics.solving_factorisation","difficulty":4,"question":"Solve x^2 - 5x + 6 = 0.","answer":"x = 2 or x = 3","solution":"Factorise as (x-2)(x-3)=0, so x=2 or x=3.","marks":3,"learning_objective":"Solve a quadratic equation by factorisation.","misconceptions":["wrong_root_sign","incomplete_factorisation"]},
-  {"question_id":"S2-FAC-Q004","school_level":"Secondary 2","topic":"Factorisation","subtopic":"Quadratic trinomial","skill_id":"factorisation.quadratic_trinomial","difficulty":4,"question":"Factorise x^2 - x - 12.","answer":"(x-4)(x+3)","solution":"Find two numbers whose product is -12 and sum is -1: -4 and 3.","marks":2,"learning_objective":"Factorise a quadratic trinomial with mixed signs.","misconceptions":["incorrect_factor_pair","sign_error"]},
-  {"question_id":"S2-FAC-Q005","school_level":"Secondary 2","topic":"Factorisation","subtopic":"Common factor","skill_id":"factorisation.common_factor","difficulty":5,"question":"Factorise 3x^2 + 12x.","answer":"3x(x+4)","solution":"Take out the greatest common factor 3x.","marks":2,"learning_objective":"Identify a variable common factor before factorising.","misconceptions":["incomplete_factorisation","concept_unknown"]}
+  {
+    "question_id": "D-FAC-001",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Common factor",
+    "skill_id": "factorisation.common_factor",
+    "difficulty": 1,
+    "question": "Factorise 6x + 12.",
+    "answer": "6(x+2)",
+    "solution": "Take out the greatest common factor 6.",
+    "marks": 1,
+    "learning_objective": "Factorise by taking out a numerical common factor.",
+    "misconceptions": [
+      "incomplete_factorisation"
+    ]
+  },
+  {
+    "question_id": "D-FAC-002",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Difference of two squares",
+    "skill_id": "factorisation.difference_two_squares",
+    "difficulty": 2,
+    "question": "Factorise x^2 - 25.",
+    "answer": "(x-5)(x+5)",
+    "solution": "Use a^2-b^2=(a-b)(a+b).",
+    "marks": 2,
+    "learning_objective": "Recognise a difference of two squares.",
+    "misconceptions": [
+      "sign_error",
+      "concept_unknown"
+    ]
+  },
+  {
+    "question_id": "D-FAC-003",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Quadratic trinomial",
+    "skill_id": "factorisation.quadratic_trinomial",
+    "difficulty": 3,
+    "question": "Factorise x^2 + 5x + 6.",
+    "answer": "(x+2)(x+3)",
+    "solution": "Find two integers with product 6 and sum 5.",
+    "marks": 2,
+    "learning_objective": "Factorise a monic quadratic trinomial.",
+    "misconceptions": [
+      "incorrect_factor_pair",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "D-FAC-004",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Quadratic trinomial",
+    "skill_id": "factorisation.quadratic_trinomial",
+    "difficulty": 4,
+    "question": "Factorise x^2 - x - 12.",
+    "answer": "(x-4)(x+3)",
+    "solution": "Find two integers with product -12 and sum -1.",
+    "marks": 2,
+    "learning_objective": "Factorise a trinomial with mixed signs.",
+    "misconceptions": [
+      "incorrect_factor_pair",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "D-FAC-005",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Common factor",
+    "skill_id": "factorisation.common_factor",
+    "difficulty": 5,
+    "question": "Factorise 3x^2 + 12x.",
+    "answer": "3x(x+4)",
+    "solution": "Take out the greatest common factor 3x.",
+    "marks": 2,
+    "learning_objective": "Factorise using a variable common factor.",
+    "misconceptions": [
+      "incomplete_factorisation",
+      "concept_unknown"
+    ]
+  },
+  {
+    "question_id": "P-FAC-001",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Common factor",
+    "skill_id": "factorisation.common_factor",
+    "difficulty": 1,
+    "question": "Factorise 8x + 20.",
+    "answer": "4(2x+5)",
+    "solution": "Take out the greatest common factor 4.",
+    "marks": 1,
+    "learning_objective": "Practise numerical common factors.",
+    "misconceptions": [
+      "incomplete_factorisation"
+    ]
+  },
+  {
+    "question_id": "P-FAC-002",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Difference of two squares",
+    "skill_id": "factorisation.difference_two_squares",
+    "difficulty": 2,
+    "question": "Factorise x^2 - 49.",
+    "answer": "(x-7)(x+7)",
+    "solution": "Use the difference-of-squares identity.",
+    "marks": 2,
+    "learning_objective": "Practise differences of two squares.",
+    "misconceptions": [
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "P-FAC-003",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Quadratic trinomial",
+    "skill_id": "factorisation.quadratic_trinomial",
+    "difficulty": 3,
+    "question": "Factorise x^2 + 7x + 12.",
+    "answer": "(x+3)(x+4)",
+    "solution": "Find two integers with product 12 and sum 7.",
+    "marks": 2,
+    "learning_objective": "Practise positive monic trinomials.",
+    "misconceptions": [
+      "incorrect_factor_pair"
+    ]
+  },
+  {
+    "question_id": "P-FAC-004",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Quadratic trinomial",
+    "skill_id": "factorisation.quadratic_trinomial",
+    "difficulty": 4,
+    "question": "Factorise x^2 - 2x - 15.",
+    "answer": "(x-5)(x+3)",
+    "solution": "Find two integers with product -15 and sum -2.",
+    "marks": 2,
+    "learning_objective": "Practise mixed-sign trinomials.",
+    "misconceptions": [
+      "incorrect_factor_pair",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "P-FAC-005",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Factorisation",
+    "subtopic": "Non-monic trinomial",
+    "skill_id": "factorisation.non_monic_trinomial",
+    "difficulty": 5,
+    "question": "Factorise 2x^2 + 7x + 3.",
+    "answer": "(2x+1)(x+3)",
+    "solution": "Split the middle term and factor by grouping.",
+    "marks": 3,
+    "learning_objective": "Factorise a non-monic quadratic trinomial.",
+    "misconceptions": [
+      "incorrect_factor_pair",
+      "incomplete_factorisation"
+    ]
+  },
+  {
+    "question_id": "D-EXP-001",
+    "usage": "diagnostic",
+    "school_level": "Secondary 1",
+    "topic": "Expansion",
+    "subtopic": "Single bracket",
+    "skill_id": "expansion.single_bracket",
+    "difficulty": 1,
+    "question": "Expand 3(x + 4).",
+    "answer": "3x + 12",
+    "solution": "Multiply 3 by both terms.",
+    "marks": 1,
+    "learning_objective": "Expand a positive single bracket.",
+    "misconceptions": [
+      "distribution_error"
+    ]
+  },
+  {
+    "question_id": "D-EXP-002",
+    "usage": "diagnostic",
+    "school_level": "Secondary 1",
+    "topic": "Expansion",
+    "subtopic": "Single bracket",
+    "skill_id": "expansion.single_bracket",
+    "difficulty": 2,
+    "question": "Expand -2(x - 5).",
+    "answer": "-2x + 10",
+    "solution": "Multiply -2 by both terms.",
+    "marks": 2,
+    "learning_objective": "Expand a bracket with a negative multiplier.",
+    "misconceptions": [
+      "distribution_error",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "D-EXP-003",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Expansion",
+    "subtopic": "Double brackets",
+    "skill_id": "expansion.double_bracket",
+    "difficulty": 3,
+    "question": "Expand (x + 2)(x + 3).",
+    "answer": "x^2 + 5x + 6",
+    "solution": "Multiply every term and collect like terms.",
+    "marks": 2,
+    "learning_objective": "Expand two positive linear brackets.",
+    "misconceptions": [
+      "missing_cross_terms",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "D-EXP-004",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Expansion",
+    "subtopic": "Double brackets",
+    "skill_id": "expansion.double_bracket",
+    "difficulty": 4,
+    "question": "Expand (x - 4)(x + 2).",
+    "answer": "x^2 - 2x - 8",
+    "solution": "Multiply every term and collect like terms.",
+    "marks": 2,
+    "learning_objective": "Expand linear brackets with mixed signs.",
+    "misconceptions": [
+      "missing_cross_terms",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "D-EXP-005",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Expansion",
+    "subtopic": "Double brackets",
+    "skill_id": "expansion.double_bracket",
+    "difficulty": 5,
+    "question": "Expand (2x + 3)(x - 5).",
+    "answer": "2x^2 - 7x - 15",
+    "solution": "Multiply every term and collect like terms.",
+    "marks": 3,
+    "learning_objective": "Expand non-monic linear brackets.",
+    "misconceptions": [
+      "missing_cross_terms",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "P-EXP-001",
+    "usage": "practice",
+    "school_level": "Secondary 1",
+    "topic": "Expansion",
+    "subtopic": "Single bracket",
+    "skill_id": "expansion.single_bracket",
+    "difficulty": 1,
+    "question": "Expand 5(x + 2).",
+    "answer": "5x + 10",
+    "solution": "Distribute 5 to both terms.",
+    "marks": 1,
+    "learning_objective": "Practise positive single brackets.",
+    "misconceptions": [
+      "distribution_error"
+    ]
+  },
+  {
+    "question_id": "P-EXP-002",
+    "usage": "practice",
+    "school_level": "Secondary 1",
+    "topic": "Expansion",
+    "subtopic": "Single bracket",
+    "skill_id": "expansion.single_bracket",
+    "difficulty": 2,
+    "question": "Expand -3(x + 4).",
+    "answer": "-3x - 12",
+    "solution": "Distribute -3 to both terms.",
+    "marks": 2,
+    "learning_objective": "Practise negative single brackets.",
+    "misconceptions": [
+      "distribution_error",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "P-EXP-003",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Expansion",
+    "subtopic": "Double brackets",
+    "skill_id": "expansion.double_bracket",
+    "difficulty": 3,
+    "question": "Expand (x + 4)(x + 5).",
+    "answer": "x^2 + 9x + 20",
+    "solution": "Multiply every term and collect like terms.",
+    "marks": 2,
+    "learning_objective": "Practise positive double brackets.",
+    "misconceptions": [
+      "missing_cross_terms"
+    ]
+  },
+  {
+    "question_id": "P-EXP-004",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Expansion",
+    "subtopic": "Double brackets",
+    "skill_id": "expansion.double_bracket",
+    "difficulty": 4,
+    "question": "Expand (x - 3)(x + 6).",
+    "answer": "x^2 + 3x - 18",
+    "solution": "Multiply every term and collect like terms.",
+    "marks": 2,
+    "learning_objective": "Practise mixed-sign double brackets.",
+    "misconceptions": [
+      "missing_cross_terms",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "P-EXP-005",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Expansion",
+    "subtopic": "Double brackets",
+    "skill_id": "expansion.double_bracket",
+    "difficulty": 5,
+    "question": "Expand (3x - 2)(2x + 5).",
+    "answer": "6x^2 + 11x - 10",
+    "solution": "Multiply every term and collect like terms.",
+    "marks": 3,
+    "learning_objective": "Practise non-monic double brackets.",
+    "misconceptions": [
+      "missing_cross_terms",
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "D-LIN-001",
+    "usage": "diagnostic",
+    "school_level": "Secondary 1",
+    "topic": "Linear equations",
+    "subtopic": "One-step equations",
+    "skill_id": "linear_equations.one_step",
+    "difficulty": 1,
+    "question": "Solve x + 7 = 12.",
+    "answer": "x = 5",
+    "solution": "Subtract 7 from both sides.",
+    "marks": 1,
+    "learning_objective": "Solve an additive one-step equation.",
+    "misconceptions": [
+      "inverse_operation_error"
+    ]
+  },
+  {
+    "question_id": "D-LIN-002",
+    "usage": "diagnostic",
+    "school_level": "Secondary 1",
+    "topic": "Linear equations",
+    "subtopic": "Two-step equations",
+    "skill_id": "linear_equations.two_step",
+    "difficulty": 2,
+    "question": "Solve 2x + 3 = 13.",
+    "answer": "x = 5",
+    "solution": "Subtract 3, then divide by 2.",
+    "marks": 2,
+    "learning_objective": "Solve a two-step equation.",
+    "misconceptions": [
+      "equation_balance_error",
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "D-LIN-003",
+    "usage": "diagnostic",
+    "school_level": "Secondary 1",
+    "topic": "Linear equations",
+    "subtopic": "Multi-step equations",
+    "skill_id": "linear_equations.multi_step",
+    "difficulty": 3,
+    "question": "Solve 3x - 4 = 11.",
+    "answer": "x = 5",
+    "solution": "Add 4, then divide by 3.",
+    "marks": 2,
+    "learning_objective": "Solve a multi-step equation.",
+    "misconceptions": [
+      "equation_balance_error",
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "D-LIN-004",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Linear equations",
+    "subtopic": "Unknown on both sides",
+    "skill_id": "linear_equations.both_sides",
+    "difficulty": 4,
+    "question": "Solve 5x + 2 = 2x + 17.",
+    "answer": "x = 5",
+    "solution": "Collect x terms on one side and constants on the other.",
+    "marks": 2,
+    "learning_objective": "Solve with the unknown on both sides.",
+    "misconceptions": [
+      "equation_balance_error",
+      "inverse_operation_error"
+    ]
+  },
+  {
+    "question_id": "D-LIN-005",
+    "usage": "diagnostic",
+    "school_level": "Secondary 2",
+    "topic": "Linear equations",
+    "subtopic": "Fractional equations",
+    "skill_id": "linear_equations.fractions",
+    "difficulty": 5,
+    "question": "Solve (x + 3)/2 = 7.",
+    "answer": "x = 11",
+    "solution": "Multiply both sides by 2, then subtract 3.",
+    "marks": 3,
+    "learning_objective": "Solve a linear equation containing a fraction.",
+    "misconceptions": [
+      "denominator_error",
+      "equation_balance_error"
+    ]
+  },
+  {
+    "question_id": "P-LIN-001",
+    "usage": "practice",
+    "school_level": "Secondary 1",
+    "topic": "Linear equations",
+    "subtopic": "One-step equations",
+    "skill_id": "linear_equations.one_step",
+    "difficulty": 1,
+    "question": "Solve x - 9 = 4.",
+    "answer": "x = 13",
+    "solution": "Add 9 to both sides.",
+    "marks": 1,
+    "learning_objective": "Practise one-step equations.",
+    "misconceptions": [
+      "inverse_operation_error"
+    ]
+  },
+  {
+    "question_id": "P-LIN-002",
+    "usage": "practice",
+    "school_level": "Secondary 1",
+    "topic": "Linear equations",
+    "subtopic": "Two-step equations",
+    "skill_id": "linear_equations.two_step",
+    "difficulty": 2,
+    "question": "Solve 4x + 1 = 21.",
+    "answer": "x = 5",
+    "solution": "Subtract 1, then divide by 4.",
+    "marks": 2,
+    "learning_objective": "Practise two-step equations.",
+    "misconceptions": [
+      "equation_balance_error"
+    ]
+  },
+  {
+    "question_id": "P-LIN-003",
+    "usage": "practice",
+    "school_level": "Secondary 1",
+    "topic": "Linear equations",
+    "subtopic": "Multi-step equations",
+    "skill_id": "linear_equations.multi_step",
+    "difficulty": 3,
+    "question": "Solve 7x - 6 = 29.",
+    "answer": "x = 5",
+    "solution": "Add 6, then divide by 7.",
+    "marks": 2,
+    "learning_objective": "Practise multi-step equations.",
+    "misconceptions": [
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "P-LIN-004",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Linear equations",
+    "subtopic": "Unknown on both sides",
+    "skill_id": "linear_equations.both_sides",
+    "difficulty": 4,
+    "question": "Solve 6x - 4 = 3x + 14.",
+    "answer": "x = 6",
+    "solution": "Collect x terms, then constants.",
+    "marks": 2,
+    "learning_objective": "Practise equations with x on both sides.",
+    "misconceptions": [
+      "equation_balance_error"
+    ]
+  },
+  {
+    "question_id": "P-LIN-005",
+    "usage": "practice",
+    "school_level": "Secondary 2",
+    "topic": "Linear equations",
+    "subtopic": "Fractional equations",
+    "skill_id": "linear_equations.fractions",
+    "difficulty": 5,
+    "question": "Solve (2x - 1)/3 = 5.",
+    "answer": "x = 8",
+    "solution": "Multiply by 3, add 1, then divide by 2.",
+    "marks": 3,
+    "learning_objective": "Practise fractional linear equations.",
+    "misconceptions": [
+      "denominator_error",
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "D-QUAD-001",
+    "usage": "diagnostic",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Recognising quadratics",
+    "skill_id": "quadratics.evaluation",
+    "difficulty": 1,
+    "question": "Evaluate x^2 - 3x + 2 when x = 1.",
+    "answer": "0",
+    "solution": "Substitute x=1 and simplify.",
+    "marks": 1,
+    "learning_objective": "Evaluate a quadratic expression.",
+    "misconceptions": [
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "D-QUAD-002",
+    "usage": "diagnostic",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Roots from factors",
+    "skill_id": "quadratics.roots_from_factors",
+    "difficulty": 2,
+    "question": "Solve (x - 2)(x + 1) = 0.",
+    "answer": "x = 2 or x = -1",
+    "solution": "Set each factor equal to zero.",
+    "marks": 2,
+    "learning_objective": "Use the zero-product property.",
+    "misconceptions": [
+      "wrong_root_sign"
+    ]
+  },
+  {
+    "question_id": "D-QUAD-003",
+    "usage": "diagnostic",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Solving by factorisation",
+    "skill_id": "quadratics.solving_factorisation",
+    "difficulty": 3,
+    "question": "Solve x^2 - 7x + 12 = 0.",
+    "answer": "x = 3 or x = 4",
+    "solution": "Factorise, then apply the zero-product property.",
+    "marks": 2,
+    "learning_objective": "Solve a monic quadratic by factorisation.",
+    "misconceptions": [
+      "wrong_root_sign",
+      "incomplete_factorisation"
+    ]
+  },
+  {
+    "question_id": "D-QUAD-004",
+    "usage": "diagnostic",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Solving by factorisation",
+    "skill_id": "quadratics.solving_factorisation",
+    "difficulty": 4,
+    "question": "Solve x^2 - 5x + 6 = 0.",
+    "answer": "x = 2 or x = 3",
+    "solution": "Factorise, then apply the zero-product property.",
+    "marks": 2,
+    "learning_objective": "Solve a quadratic equation by factorisation.",
+    "misconceptions": [
+      "wrong_root_sign"
+    ]
+  },
+  {
+    "question_id": "D-QUAD-005",
+    "usage": "diagnostic",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Non-monic quadratics",
+    "skill_id": "quadratics.non_monic",
+    "difficulty": 5,
+    "question": "Solve 2x^2 - 5x - 3 = 0.",
+    "answer": "x = 3 or x = -1/2",
+    "solution": "Factorise as (2x+1)(x-3)=0.",
+    "marks": 3,
+    "learning_objective": "Solve a non-monic quadratic.",
+    "misconceptions": [
+      "wrong_root_sign",
+      "incomplete_factorisation"
+    ]
+  },
+  {
+    "question_id": "P-QUAD-001",
+    "usage": "practice",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Recognising quadratics",
+    "skill_id": "quadratics.evaluation",
+    "difficulty": 1,
+    "question": "Evaluate x^2 + 2x - 3 when x = 1.",
+    "answer": "0",
+    "solution": "Substitute x=1 and simplify.",
+    "marks": 1,
+    "learning_objective": "Practise evaluating quadratics.",
+    "misconceptions": [
+      "arithmetic_error"
+    ]
+  },
+  {
+    "question_id": "P-QUAD-002",
+    "usage": "practice",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Roots from factors",
+    "skill_id": "quadratics.roots_from_factors",
+    "difficulty": 2,
+    "question": "Solve (x - 4)(x + 2) = 0.",
+    "answer": "x = 4 or x = -2",
+    "solution": "Set each factor equal to zero.",
+    "marks": 2,
+    "learning_objective": "Practise the zero-product property.",
+    "misconceptions": [
+      "wrong_root_sign"
+    ]
+  },
+  {
+    "question_id": "P-QUAD-003",
+    "usage": "practice",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Solving by factorisation",
+    "skill_id": "quadratics.solving_factorisation",
+    "difficulty": 3,
+    "question": "Solve x^2 - 9x + 20 = 0.",
+    "answer": "x = 4 or x = 5",
+    "solution": "Factorise, then solve each factor.",
+    "marks": 2,
+    "learning_objective": "Practise solving monic quadratics.",
+    "misconceptions": [
+      "wrong_root_sign"
+    ]
+  },
+  {
+    "question_id": "P-QUAD-004",
+    "usage": "practice",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Solving by factorisation",
+    "skill_id": "quadratics.solving_factorisation",
+    "difficulty": 4,
+    "question": "Solve x^2 + x - 12 = 0.",
+    "answer": "x = 3 or x = -4",
+    "solution": "Factorise, then solve each factor.",
+    "marks": 2,
+    "learning_objective": "Practise mixed-sign quadratic equations.",
+    "misconceptions": [
+      "wrong_root_sign",
+      "sign_error"
+    ]
+  },
+  {
+    "question_id": "P-QUAD-005",
+    "usage": "practice",
+    "school_level": "Secondary 3",
+    "topic": "Quadratics",
+    "subtopic": "Non-monic quadratics",
+    "skill_id": "quadratics.non_monic",
+    "difficulty": 5,
+    "question": "Solve 2x^2 + x - 6 = 0.",
+    "answer": "x = 3/2 or x = -2",
+    "solution": "Factorise as (2x-3)(x+2)=0.",
+    "marks": 3,
+    "learning_objective": "Practise non-monic quadratic equations.",
+    "misconceptions": [
+      "wrong_root_sign",
+      "incomplete_factorisation"
+    ]
+  }
 ]

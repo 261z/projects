@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TypedDict
 from langgraph.graph import END, START, StateGraph
-from ..agents.generator import generate_verified_question
+from ..agents.generator import generate_verified_question_sync
 
 
 class GenerationState(TypedDict, total=False):
@@ -14,7 +14,7 @@ class GenerationState(TypedDict, total=False):
 
 
 def generate_node(state: GenerationState) -> GenerationState:
-    question = generate_verified_question(state["skill_id"], state["difficulty"], max_retries=3)
+    question = generate_verified_question_sync(state["skill_id"], state["difficulty"], max_retries=3)
     return {**state, "question": question, "verification_status": "verified", "retry_count": state.get("retry_count", 0)}
 
 
