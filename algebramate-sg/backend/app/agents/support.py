@@ -5,8 +5,11 @@ from ..llm.provider import AgentRouterUnavailable, chat
 
 def hint_for(question: dict, level: int) -> str:
     if level == 1: return "What operation or pattern is at the centre of this question?"
-    if level == 2: return question.get("solution", "Break the question into one small step at a time.")
-    return "Try the first step now, then check whether both sides or every term have been treated consistently."
+    if "factorisation" in question["skill_id"]:
+        if level == 2: return "Find two integers whose product is the constant term and whose sum is the coefficient of x."
+        return "Write the two bracket factors using your pair, then expand them to check the original expression."
+    if level == 2: return "Break the expression into one small step at a time and keep every term visible."
+    return "Try the first step now, then check whether every term has been treated consistently."
 
 
 def visual_spec(question: dict) -> dict:

@@ -27,8 +27,8 @@ def diagnose_misconception(question: dict, student_answer: str) -> Misconception
 
 def scaffold_hint(question: dict, level: int) -> HintOutput:
     if level == 1: text = "What structure or operation is this question asking you to recognise?"
-    elif level == 2: text = question.get("solution", "Break the problem into one operation at a time.")
-    else: text = "Write the first transformed line, then check that every term has been included."
+    elif level == 2: text = "Find the pair of numbers that matches the required product and sum, without writing the final factorisation yet."
+    else: text = "Write your two bracket factors, then expand them to check every term before submitting."
     return HintOutput(hint_level=level, hint=text, reveals_final_answer=False)
 
 
