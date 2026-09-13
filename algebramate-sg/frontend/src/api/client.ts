@@ -8,6 +8,7 @@ export const api = {
   register: (username: string, password: string) => request<{ id: number; username: string }>("/auth/register", { method: "POST", body: JSON.stringify({ username, password }) }),
   login: (username: string, password: string) => request<Auth>("/auth/login", { method: "POST", body: JSON.stringify({ username, password }) }),
   topics: () => request<{ name: string }[]>("/topics"),
+  diagnosticStatus: (topic: string) => request<{ topic: string; complete: boolean; answered: number; total: number; raw_score?: number; initial_mastery?: number; recommended_starting_difficulty?: number }>(`/diagnostic/status?topic=${encodeURIComponent(topic)}`),
   diagnosticStart: (topic: string) => request<{ topic: string; questions: Question[]; total: number }>("/diagnostic/start", { method: "POST", body: JSON.stringify({ topic }) }),
   diagnosticAnswer: (question_id: string, student_answer: string) => request<DiagnosticResult>("/diagnostic/answer", { method: "POST", body: JSON.stringify({ question_id, student_answer }) }),
   startPractice: (topic: string, skill_id?: string, difficulty = 2, exclude_question_ids: string[] = []) => request<{ question: Question; retrieval: string }>("/practice/start", { method: "POST", body: JSON.stringify({ topic, skill_id, difficulty, exclude_question_ids }) }),

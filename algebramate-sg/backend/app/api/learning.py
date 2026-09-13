@@ -24,6 +24,16 @@ def topics(_: dict = Depends(current_user)) -> list[dict[str, str]]:
     return [{"name": name} for name in sorted({q["topic"] for q in load_questions()})]
 
 
+@router.get("/diagnostic/status")
+def diagnostic_status(topic: str, user: dict = Depends(current_user)) -> dict:
+    with get_connection() as connection:
+        result = connection.execute("SELECT raw_score, initial_mastery, recommended_starting_difficulty, created_at FROM diagnostic_results WHERE user_id = ? AND topic = ? ORDER BY id DESC LIMIT 1", (user["id"], topic)).fetchone()
+        answered = connection.execute("SELECT COUNT(*) AS count FROM diagnostic_answers WHERE user_id = ? AND topic = ?", (user["id"], topic)).fetchone()["count"]
+    if result is None:
+        return {"topic": topic, "complete": False, "answered": answered, "total": 5}
+    return {"topic": topic, "complete": True, "answered": 5, "total": 5, **dict(result)}
+
+
 @router.post("/diagnostic/start")
 def diagnostic_start(payload: DiagnosticStart, user: dict = Depends(current_user)) -> dict:
     questions = [q for q in load_questions() if q["topic"].lower() == payload.topic.lower()]
