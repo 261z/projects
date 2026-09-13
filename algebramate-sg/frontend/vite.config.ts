@@ -8,6 +8,11 @@ export default defineConfig({
     proxy: {
       "/api": "http://127.0.0.1:8000",
       "/health": "http://127.0.0.1:8000",
+      "/auth": "http://127.0.0.1:8000",
+      "/topics": "http://127.0.0.1:8000",
+      "/diagnostic": "http://127.0.0.1:8000",
+      "/practice": "http://127.0.0.1:8000",
+      "/progress": "http://127.0.0.1:8000",
     },
   },
 });
