@@ -1,0 +1,17 @@
+[
+  {"id":"expansion.single_bracket","topic":"Expansion","subtopic":"Single bracket","school_level":"Secondary 1","prerequisite_skill_id":null},
+  {"id":"expansion.double_bracket","topic":"Expansion","subtopic":"Double brackets","school_level":"Secondary 2","prerequisite_skill_id":"expansion.single_bracket"},
+  {"id":"factorisation.common_factor","topic":"Factorisation","subtopic":"Common factor","school_level":"Secondary 2","prerequisite_skill_id":"expansion.single_bracket"},
+  {"id":"factorisation.difference_two_squares","topic":"Factorisation","subtopic":"Difference of two squares","school_level":"Secondary 2","prerequisite_skill_id":"expansion.double_bracket"},
+  {"id":"factorisation.quadratic_trinomial","topic":"Factorisation","subtopic":"Quadratic trinomial","school_level":"Secondary 2","prerequisite_skill_id":"expansion.double_bracket"},
+  {"id":"factorisation.non_monic_trinomial","topic":"Factorisation","subtopic":"Non-monic trinomial","school_level":"Secondary 2","prerequisite_skill_id":"factorisation.quadratic_trinomial"},
+  {"id":"linear_equations.one_step","topic":"Linear equations","subtopic":"One-step equations","school_level":"Secondary 1","prerequisite_skill_id":null},
+  {"id":"linear_equations.two_step","topic":"Linear equations","subtopic":"Two-step equations","school_level":"Secondary 1","prerequisite_skill_id":"linear_equations.one_step"},
+  {"id":"linear_equations.multi_step","topic":"Linear equations","subtopic":"Multi-step equations","school_level":"Secondary 1","prerequisite_skill_id":"linear_equations.two_step"},
+  {"id":"linear_equations.both_sides","topic":"Linear equations","subtopic":"Unknown on both sides","school_level":"Secondary 2","prerequisite_skill_id":"linear_equations.multi_step"},
+  {"id":"linear_equations.fractions","topic":"Linear equations","subtopic":"Fractional equations","school_level":"Secondary 2","prerequisite_skill_id":"linear_equations.multi_step"},
+  {"id":"quadratics.evaluation","topic":"Quadratics","subtopic":"Recognising quadratics","school_level":"Secondary 3","prerequisite_skill_id":"expansion.double_bracket"},
+  {"id":"quadratics.roots_from_factors","topic":"Quadratics","subtopic":"Roots from factors","school_level":"Secondary 3","prerequisite_skill_id":"linear_equations.one_step"},
+  {"id":"quadratics.solving_factorisation","topic":"Quadratics","subtopic":"Solving by factorisation","school_level":"Secondary 3","prerequisite_skill_id":"quadratics.roots_from_factors"},
+  {"id":"quadratics.non_monic","topic":"Quadratics","subtopic":"Non-monic quadratics","school_level":"Secondary 3","prerequisite_skill_id":"quadratics.solving_factorisation"}
+]

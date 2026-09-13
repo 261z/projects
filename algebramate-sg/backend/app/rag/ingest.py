@@ -1,14 +1,11 @@
 from __future__ import annotations
 
-import json
-from pathlib import Path
-
 from .chroma import get_questions_collection
+from .schemas import load_questions_validated
 
 
 def load_questions() -> list[dict]:
-    path = Path(__file__).resolve().parents[2] / "data" / "questions.json"
-    return json.loads(path.read_text())
+    return [question.model_dump() for question in load_questions_validated()]
 
 
 def ingest_questions() -> int:

@@ -27,6 +27,8 @@ def _ensure_column(connection: sqlite3.Connection, table: str, column: str, defi
 
 
 def init_db() -> None:
+    from ..rag.schemas import load_skills_validated
+
     with get_connection() as connection:
         connection.executescript(
             """
@@ -41,3 +43,8 @@ def init_db() -> None:
             """
         )
         _ensure_column(connection, "attempts", "session_id", "INTEGER REFERENCES learning_sessions(id)")
+        for skill in load_skills_validated():
+            connection.execute(
+                "INSERT INTO skills (id, topic, subtopic, school_level, prerequisite_skill_id) VALUES (?, ?, ?, ?, ?) ON CONFLICT(id) DO UPDATE SET topic=excluded.topic, subtopic=excluded.subtopic, school_level=excluded.school_level, prerequisite_skill_id=excluded.prerequisite_skill_id",
+                (skill.id, skill.topic, skill.subtopic, skill.school_level, skill.prerequisite_skill_id),
+            )
