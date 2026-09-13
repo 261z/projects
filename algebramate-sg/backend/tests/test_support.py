@@ -14,10 +14,13 @@ def test_support_endpoints_have_guarded_fallbacks(tmp_path, monkeypatch) -> None
     client.post("/auth/register", json={"username": "supporter", "password": password})
     token = client.post("/auth/login", json={"username": "supporter", "password": password}).json()["access_token"]
     headers = {"Authorization": f"Bearer {token}"}
-    payload = {"question_id": "S2-FAC-Q001", "hint_level": 2}
+    payload = {"question_id": "S2-FAC-Q004", "hint_level": 2}
     hint = client.post("/practice/hint", headers=headers, json=payload)
     assert hint.status_code == 200 and hint.json()["guard"] == "approved"
     visual = client.post("/practice/visualise", headers=headers, json=payload)
     assert visual.json()["spec"]["visual_type"] == "algebra_frame"
+    assert visual.json()["spec"]["mode"] == "factorisation"
+    assert visual.json()["spec"]["representation"] == "factor_pair"
+    assert visual.json()["spec"]["factor_pair"]["numbers"] == ["-4", "3"]
     explanation = client.post("/practice/explain", headers=headers, json=payload)
     assert explanation.status_code == 200 and explanation.json()["text"]

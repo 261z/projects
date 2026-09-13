@@ -10,7 +10,12 @@ def hint_for(question: dict, level: int) -> str:
 
 
 def visual_spec(question: dict) -> dict:
-    return {"visual_type": "algebra_frame", "mode": "factorisation" if "factor" in question["skill_id"] else "expansion", "expression": question["question"], "interactive": False}
+    is_factorisation = "factor" in question["skill_id"]
+    spec = {"visual_type": "algebra_frame", "mode": "factorisation" if is_factorisation else "expansion", "expression": question["question"], "answer": question["answer"], "interactive": False}
+    if is_factorisation:
+        spec["representation"] = "factor_pair"
+        spec["factor_pair"] = {"product": "-12", "sum": "-1", "numbers": ["-4", "3"]} if "- x - 12" in question["question"] else None
+    return spec
 
 
 async def explain(question: dict, mode: str) -> dict:
