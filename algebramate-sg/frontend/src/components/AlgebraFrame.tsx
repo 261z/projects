@@ -1,21 +1,21 @@
-type QuestionVisual = { question?: string; answer?: string; topic?: string; skill_id?: string };
+import { getFactorisationVisual, type VisualQuestion } from "./factorisationVisual";
 
-type Props = { question?: QuestionVisual };
+type Props = { question?: VisualQuestion };
 
-function factorisationModel(question: QuestionVisual) {
-  const expression = question.question || "x² − x − 12";
+function factorisationModel(question?: VisualQuestion) {
+  const model = getFactorisationVisual(question);
   return <>
-    <div className="frame-title">FACTOR PAIR MODEL · FACTORISATION</div>
-    <div className="frame-subtitle">Find two numbers whose product is −12 and whose sum is −1.</div>
-    <div className="factor-pair"><span>? × ? = −12</span><span>? + ? = −1</span></div>
-    <div className="frame-equation">{expression} <strong>→ complete the factor pair</strong></div>
+    <div className="frame-title">{model.title}</div>
+    <div className="frame-subtitle">{model.subtitle}</div>
+    <div className="factor-pair">{model.facts.map(fact => <span key={fact}>{fact}</span>)}</div>
+    <div className="frame-equation">{model.expression} <strong>→ {model.instruction}</strong></div>
   </>;
 }
 
 export function AlgebraFrame({ question }: Props) {
   const isFactorisation = question?.skill_id?.includes("factorisation") || question?.topic === "Factorisation";
   const expression = question?.question || "(x + 2)(x + 3)";
-  if (isFactorisation) return <div className="algebra-frame" aria-label={`Factor pair scaffold for ${expression}`}>{factorisationModel(question || {})}</div>;
+  if (isFactorisation) return <div className="algebra-frame" aria-label={`Factorisation scaffold for ${expression}`}>{factorisationModel(question)}</div>;
   return <div className="algebra-frame" aria-label={`Area model for ${expression}`}>
     <div className="frame-title">AREA MODEL · EXPANSION</div>
     <div className="frame-grid">
