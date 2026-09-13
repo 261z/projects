@@ -7,7 +7,7 @@ function factorisationModel(question?: VisualQuestion) {
   return <>
     <div className="frame-title">{model.title}</div>
     <div className="frame-subtitle">{model.subtitle}</div>
-    <div className="factor-pair">{model.facts.map(fact => <span key={fact}>{fact}</span>)}</div>
+    <div className="factor-pair">{model.facts.map((fact, index) => <span key={`${fact}-${index}`}>{fact}</span>)}</div>
     <div className="frame-equation">{model.expression} <strong>→ {model.instruction}</strong></div>
   </>;
 }
