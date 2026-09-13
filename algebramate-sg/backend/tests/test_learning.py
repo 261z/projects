@@ -27,3 +27,17 @@ def test_practice_persists_progress(tmp_path, monkeypatch) -> None:
     answered = client.post("/practice/answer", headers=headers, json={"question_id": "S2-FAC-Q001", "student_answer": "(x+2)(x+3)"})
     assert answered.status_code == 200 and answered.json()["correct"] is True
     assert client.get("/progress", headers=headers).json()["skills"][0]["skill_id"] == "factorisation.quadratic_trinomial"
+
+
+def test_practice_can_exclude_seen_question(tmp_path, monkeypatch) -> None:
+    from app.db import database
+    database_path = tmp_path / "next-question.db"
+    monkeypatch.setattr(database, "database_path", lambda: database_path)
+    database.init_db()
+    password = secrets.token_urlsafe(24)
+    client.post("/auth/register", json={"username": "next_student", "password": password})
+    token = client.post("/auth/login", json={"username": "next_student", "password": password}).json()["access_token"]
+    headers = {"Authorization": f"Bearer {token}"}
+    first = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "difficulty": 4}).json()["question"]
+    second = client.post("/practice/start", headers=headers, json={"topic": "Factorisation", "difficulty": 4, "exclude_question_ids": [first["question_id"]]}).json()["question"]
+    assert second["question_id"] != first["question_id"]

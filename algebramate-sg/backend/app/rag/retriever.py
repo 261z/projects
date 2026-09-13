@@ -4,7 +4,8 @@ from .chroma import get_questions_collection
 from .ingest import load_questions
 
 
-def retrieve_question(skill_id: str | None = None, difficulty: int | None = None, topic: str | None = None) -> dict | None:
+def retrieve_question(skill_id: str | None = None, difficulty: int | None = None, topic: str | None = None, exclude_question_ids: list[str] | None = None) -> dict | None:
+    excluded = set(exclude_question_ids or [])
     collection = get_questions_collection()
     clauses: list[dict] = []
     if skill_id:
@@ -18,8 +19,8 @@ def retrieve_question(skill_id: str | None = None, difficulty: int | None = None
         result = collection.get(where=where, limit=10)
         ids = result.get("ids", [])
         if ids:
-            wanted = ids[0]
-            return next((item for item in load_questions() if item["question_id"] == wanted), None)
+            approved = load_questions()
+            return next((item for item in approved if item["question_id"] in ids and item["question_id"] not in excluded), None)
     except Exception:
         return None
     return None

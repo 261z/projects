@@ -54,9 +54,10 @@ def diagnostic_answer(payload: DiagnosticAnswer, user: dict = Depends(current_us
 
 @router.post("/practice/start")
 def practice_start(payload: PracticeStart, user: dict = Depends(current_user)) -> dict:
-    question = retrieve_question(payload.skill_id, payload.difficulty, payload.topic)
+    excluded = set(payload.exclude_question_ids)
+    question = retrieve_question(payload.skill_id, payload.difficulty, payload.topic, payload.exclude_question_ids)
     if question is None:
-        question = next((q for q in load_questions() if q["topic"].lower() == payload.topic.lower()), None)
+        question = next((q for q in load_questions() if q["topic"].lower() == payload.topic.lower() and q["question_id"] not in excluded), None)
     if question is None:
         raise HTTPException(status_code=404, detail="No approved question available")
     return {"question": question, "retrieval": "chroma" if payload.skill_id else "approved-fallback"}

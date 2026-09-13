@@ -14,6 +14,7 @@ class PracticeStart(BaseModel):
     topic: str = Field(min_length=1, max_length=80)
     skill_id: str | None = None
     difficulty: int = Field(default=2, ge=1, le=5)
+    exclude_question_ids: list[str] = Field(default_factory=list, max_length=50)
 
 
 class PracticeAnswer(BaseModel):
