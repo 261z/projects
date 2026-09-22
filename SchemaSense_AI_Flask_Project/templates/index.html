@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SchemaSense AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: false, theme: "neutral" });
+      window.schemaSenseMermaid = mermaid;
+    </script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Database metadata copilot</p>
+          <h1>SchemaSense AI</h1>
+          <p class="subtle">Explore synthetic Redshift-style metadata and create verified ER diagrams.</p>
+        </div>
+
+        <section class="info-card">
+          <span>Model</span>
+          <strong>{{ model_name }}</strong>
+          <span>Namespace</span>
+          <strong>{{ namespace }}</strong>
+        </section>
+
+        <section>
+          <h2>Try asking</h2>
+          <button class="prompt-chip">Which table stores aircraft details?</button>
+          <button class="prompt-chip">How are passengers connected to flights?</button>
+          <button class="prompt-chip">Create an ER diagram for flight bookings.</button>
+          <button class="prompt-chip">Create an ER diagram for baggage and ULD operations.</button>
+        </section>
+
+        <div class="safety-note">Synthetic metadata only. No production or customer data.</div>
+        <button id="clear-button" class="secondary-button">Clear conversation</button>
+      </aside>
+
+      <main class="main-panel">
+        <header class="main-header">
+          <div>
+            <p class="eyebrow">RAG + one LangGraph agent</p>
+            <h2>Ask about your warehouse structure</h2>
+          </div>
+          <div class="status"><span></span> Ready</div>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar">AI</div>
+            <div class="bubble">
+              Ask me about schemas, table purposes, column types and lengths, primary keys,
+              foreign keys, or table relationships. I can also generate a verified ER diagram.
+            </div>
+          </article>
+        </section>
+
+        <form id="chat-form" class="composer">
+          <textarea id="message-input" rows="2" maxlength="2000" placeholder="Ask about schemas, tables, columns, keys, or relationships"></textarea>
+          <button id="send-button" type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <template id="message-template">
+      <article class="message">
+        <div class="avatar"></div>
+        <div class="message-body">
+          <div class="bubble"></div>
+          <div class="artifacts"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
+

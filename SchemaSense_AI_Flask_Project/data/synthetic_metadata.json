@@ -1,0 +1,171 @@
+{
+  "version": "1.0.0",
+  "domain": "synthetic aviation bookings and airport operations",
+  "tables": [
+    {
+      "schema": "aviation",
+      "table": "airports",
+      "description": "Reference data for airports served by the synthetic airline network.",
+      "columns": [
+        {"name": "airport_id", "data_type": "INTEGER", "nullable": false, "primary_key": true, "description": "Surrogate airport identifier."},
+        {"name": "iata_code", "data_type": "VARCHAR(3)", "nullable": false, "description": "Three-letter IATA airport code."},
+        {"name": "airport_name", "data_type": "VARCHAR(150)", "nullable": false, "description": "Airport display name."},
+        {"name": "city", "data_type": "VARCHAR(100)", "nullable": false, "description": "City served by the airport."},
+        {"name": "country_code", "data_type": "CHAR(2)", "nullable": false, "description": "ISO-style country code."},
+        {"name": "timezone", "data_type": "VARCHAR(50)", "nullable": false, "description": "Airport time zone."}
+      ],
+      "foreign_keys": [],
+      "tags": ["airport", "reference", "location", "iata"]
+    },
+    {
+      "schema": "aviation",
+      "table": "aircraft",
+      "description": "Master data for aircraft available for flight operations.",
+      "columns": [
+        {"name": "aircraft_id", "data_type": "INTEGER", "nullable": false, "primary_key": true, "description": "Surrogate aircraft identifier."},
+        {"name": "registration_number", "data_type": "VARCHAR(20)", "nullable": false, "description": "Synthetic aircraft registration."},
+        {"name": "aircraft_type", "data_type": "VARCHAR(50)", "nullable": false, "description": "Aircraft model such as A350-900."},
+        {"name": "seat_capacity", "data_type": "INTEGER", "nullable": false, "description": "Configured passenger seat capacity."},
+        {"name": "active_flag", "data_type": "BOOLEAN", "nullable": false, "description": "Whether the aircraft is active."}
+      ],
+      "foreign_keys": [],
+      "tags": ["aircraft", "fleet", "registration", "capacity"]
+    },
+    {
+      "schema": "aviation",
+      "table": "flights",
+      "description": "Scheduled flight instances with origin, destination, timings, and assigned aircraft.",
+      "columns": [
+        {"name": "flight_id", "data_type": "VARCHAR(20)", "nullable": false, "primary_key": true, "description": "Unique scheduled flight instance."},
+        {"name": "flight_number", "data_type": "VARCHAR(10)", "nullable": false, "description": "Commercial flight number."},
+        {"name": "departure_airport_id", "data_type": "INTEGER", "nullable": false, "description": "Origin airport identifier."},
+        {"name": "arrival_airport_id", "data_type": "INTEGER", "nullable": false, "description": "Destination airport identifier."},
+        {"name": "aircraft_id", "data_type": "INTEGER", "nullable": true, "description": "Assigned aircraft identifier."},
+        {"name": "scheduled_departure", "data_type": "TIMESTAMP", "nullable": false, "description": "Planned departure timestamp."},
+        {"name": "scheduled_arrival", "data_type": "TIMESTAMP", "nullable": false, "description": "Planned arrival timestamp."}
+      ],
+      "foreign_keys": [
+        {"column": "departure_airport_id", "references_schema": "aviation", "references_table": "airports", "references_column": "airport_id", "relationship": "many-to-one", "description": "Many flights depart from one airport."},
+        {"column": "arrival_airport_id", "references_schema": "aviation", "references_table": "airports", "references_column": "airport_id", "relationship": "many-to-one", "description": "Many flights arrive at one airport."},
+        {"column": "aircraft_id", "references_schema": "aviation", "references_table": "aircraft", "references_column": "aircraft_id", "relationship": "many-to-one", "description": "An aircraft can operate many flight instances."}
+      ],
+      "tags": ["flight", "schedule", "departure", "arrival", "aircraft"]
+    },
+    {
+      "schema": "booking",
+      "table": "passengers",
+      "description": "Synthetic passenger profiles used only to model booking relationships.",
+      "columns": [
+        {"name": "passenger_id", "data_type": "VARCHAR(20)", "nullable": false, "primary_key": true, "description": "Synthetic passenger identifier."},
+        {"name": "given_name", "data_type": "VARCHAR(80)", "nullable": false, "description": "Synthetic given name."},
+        {"name": "family_name", "data_type": "VARCHAR(80)", "nullable": false, "description": "Synthetic family name."},
+        {"name": "loyalty_tier", "data_type": "VARCHAR(20)", "nullable": true, "description": "Synthetic loyalty membership tier."},
+        {"name": "created_at", "data_type": "TIMESTAMP", "nullable": false, "description": "Profile creation timestamp."}
+      ],
+      "foreign_keys": [],
+      "tags": ["passenger", "customer", "traveller", "profile"]
+    },
+    {
+      "schema": "booking",
+      "table": "bookings",
+      "description": "Reservations that connect synthetic passengers with scheduled flights.",
+      "columns": [
+        {"name": "booking_id", "data_type": "VARCHAR(20)", "nullable": false, "primary_key": true, "description": "Unique reservation identifier."},
+        {"name": "passenger_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Passenger holding the booking."},
+        {"name": "flight_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Reserved flight instance."},
+        {"name": "booking_status", "data_type": "VARCHAR(20)", "nullable": false, "description": "Reservation status such as CONFIRMED."},
+        {"name": "cabin_class", "data_type": "VARCHAR(20)", "nullable": false, "description": "Booked travel cabin."},
+        {"name": "booked_at", "data_type": "TIMESTAMP", "nullable": false, "description": "Reservation creation timestamp."}
+      ],
+      "foreign_keys": [
+        {"column": "passenger_id", "references_schema": "booking", "references_table": "passengers", "references_column": "passenger_id", "relationship": "many-to-one", "description": "A passenger can hold many bookings."},
+        {"column": "flight_id", "references_schema": "aviation", "references_table": "flights", "references_column": "flight_id", "relationship": "many-to-one", "description": "A flight can have many bookings."}
+      ],
+      "tags": ["booking", "reservation", "passenger", "flight", "cabin"]
+    },
+    {
+      "schema": "booking",
+      "table": "tickets",
+      "description": "Tickets issued for confirmed synthetic bookings.",
+      "columns": [
+        {"name": "ticket_id", "data_type": "VARCHAR(30)", "nullable": false, "primary_key": true, "description": "Unique issued ticket number."},
+        {"name": "booking_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Booking that produced the ticket."},
+        {"name": "fare_basis", "data_type": "VARCHAR(20)", "nullable": false, "description": "Synthetic fare basis code."},
+        {"name": "ticket_status", "data_type": "VARCHAR(20)", "nullable": false, "description": "Ticket status such as OPEN or USED."},
+        {"name": "issued_at", "data_type": "TIMESTAMP", "nullable": false, "description": "Ticket issue timestamp."}
+      ],
+      "foreign_keys": [
+        {"column": "booking_id", "references_schema": "booking", "references_table": "bookings", "references_column": "booking_id", "relationship": "many-to-one", "description": "A booking can have one or more issued tickets."}
+      ],
+      "tags": ["ticket", "fare", "booking", "issued"]
+    },
+    {
+      "schema": "operations",
+      "table": "baggage",
+      "description": "Checked baggage items linked to bookings and departing flights.",
+      "columns": [
+        {"name": "bag_tag_id", "data_type": "VARCHAR(30)", "nullable": false, "primary_key": true, "description": "Unique synthetic baggage tag."},
+        {"name": "booking_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Associated passenger booking."},
+        {"name": "flight_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Flight on which the bag is loaded."},
+        {"name": "weight_kg", "data_type": "DECIMAL(6,2)", "nullable": false, "description": "Recorded baggage weight."},
+        {"name": "bag_status", "data_type": "VARCHAR(30)", "nullable": false, "description": "Operational state such as ACCEPTED or LOADED."},
+        {"name": "accepted_at", "data_type": "TIMESTAMP", "nullable": false, "description": "Baggage acceptance timestamp."}
+      ],
+      "foreign_keys": [
+        {"column": "booking_id", "references_schema": "booking", "references_table": "bookings", "references_column": "booking_id", "relationship": "many-to-one", "description": "A booking can have multiple checked bags."},
+        {"column": "flight_id", "references_schema": "aviation", "references_table": "flights", "references_column": "flight_id", "relationship": "many-to-one", "description": "A flight can carry many baggage items."}
+      ],
+      "tags": ["baggage", "bag", "booking", "flight", "loading"]
+    },
+    {
+      "schema": "operations",
+      "table": "uld",
+      "description": "Unit load device master records used for baggage and cargo operations.",
+      "columns": [
+        {"name": "uld_id", "data_type": "VARCHAR(20)", "nullable": false, "primary_key": true, "description": "Unique ULD identifier."},
+        {"name": "uld_type", "data_type": "VARCHAR(20)", "nullable": false, "description": "ULD type code."},
+        {"name": "tare_weight_kg", "data_type": "DECIMAL(7,2)", "nullable": false, "description": "Empty ULD weight."},
+        {"name": "maximum_weight_kg", "data_type": "DECIMAL(8,2)", "nullable": false, "description": "Maximum permitted gross weight."},
+        {"name": "serviceable_flag", "data_type": "BOOLEAN", "nullable": false, "description": "Whether the ULD is serviceable."}
+      ],
+      "foreign_keys": [],
+      "tags": ["uld", "container", "baggage", "cargo", "equipment"]
+    },
+    {
+      "schema": "operations",
+      "table": "uld_assignment",
+      "description": "Operational assignment of a ULD to a scheduled flight.",
+      "columns": [
+        {"name": "assignment_id", "data_type": "VARCHAR(30)", "nullable": false, "primary_key": true, "description": "Unique ULD assignment identifier."},
+        {"name": "uld_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Assigned ULD."},
+        {"name": "flight_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Flight receiving the ULD."},
+        {"name": "load_position", "data_type": "VARCHAR(20)", "nullable": true, "description": "Aircraft loading position."},
+        {"name": "closed_at", "data_type": "TIMESTAMP", "nullable": true, "description": "Time the ULD was confirmed closed."},
+        {"name": "dispatched_at", "data_type": "TIMESTAMP", "nullable": true, "description": "Time the ULD was dispatched to aircraft."}
+      ],
+      "foreign_keys": [
+        {"column": "uld_id", "references_schema": "operations", "references_table": "uld", "references_column": "uld_id", "relationship": "many-to-one", "description": "A ULD can be assigned on multiple flight dates."},
+        {"column": "flight_id", "references_schema": "aviation", "references_table": "flights", "references_column": "flight_id", "relationship": "many-to-one", "description": "A flight can receive multiple ULD assignments."}
+      ],
+      "tags": ["uld", "assignment", "dispatch", "flight", "load position"]
+    },
+    {
+      "schema": "operations",
+      "table": "flight_status",
+      "description": "Timestamped operational status history for each scheduled flight.",
+      "columns": [
+        {"name": "status_event_id", "data_type": "BIGINT", "nullable": false, "primary_key": true, "description": "Unique status event identifier."},
+        {"name": "flight_id", "data_type": "VARCHAR(20)", "nullable": false, "description": "Flight associated with the event."},
+        {"name": "status_code", "data_type": "VARCHAR(30)", "nullable": false, "description": "Operational status such as BOARDING or DEPARTED."},
+        {"name": "event_time", "data_type": "TIMESTAMP", "nullable": false, "description": "Time of the status event."},
+        {"name": "delay_minutes", "data_type": "INTEGER", "nullable": true, "description": "Delay duration known at the event time."},
+        {"name": "remarks", "data_type": "VARCHAR(250)", "nullable": true, "description": "Synthetic operational remarks."}
+      ],
+      "foreign_keys": [
+        {"column": "flight_id", "references_schema": "aviation", "references_table": "flights", "references_column": "flight_id", "relationship": "many-to-one", "description": "A flight can have many status events."}
+      ],
+      "tags": ["flight status", "delay", "operations", "event history"]
+    }
+  ]
+}
+

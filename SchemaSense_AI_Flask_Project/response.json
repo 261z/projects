@@ -1,0 +1,38 @@
+{
+  "answer": "Here is the verified ER diagram. The diagram is rendered below using validated metadata.",
+  "diagram": "erDiagram\n    AVIATION__AIRPORTS ||--o{ AVIATION__FLIGHTS : departure_airport_id_to_airport_id\n    AVIATION__AIRPORTS ||--o{ AVIATION__FLIGHTS : arrival_airport_id_to_airport_id\n    AVIATION__AIRCRAFT ||--o{ AVIATION__FLIGHTS : aircraft_id_to_aircraft_id\n    BOOKING__PASSENGERS ||--o{ BOOKING__BOOKINGS : passenger_id_to_passenger_id\n    AVIATION__FLIGHTS ||--o{ BOOKING__BOOKINGS : flight_id_to_flight_id\n    BOOKING__BOOKINGS ||--o{ BOOKING__TICKETS : booking_id_to_booking_id\n    BOOKING__BOOKINGS ||--o{ OPERATIONS__BAGGAGE : booking_id_to_booking_id\n    AVIATION__FLIGHTS ||--o{ OPERATIONS__BAGGAGE : flight_id_to_flight_id\n    AVIATION__FLIGHTS ||--o{ OPERATIONS__FLIGHT_STATUS : flight_id_to_flight_id\n    OPERATIONS__ULD ||--o{ OPERATIONS__ULD_ASSIGNMENT : uld_id_to_uld_id\n    AVIATION__FLIGHTS ||--o{ OPERATIONS__ULD_ASSIGNMENT : flight_id_to_flight_id\n    AVIATION__AIRCRAFT {\n        integer aircraft_id PK\n        varchar_20 registration_number\n        varchar_50 aircraft_type\n        integer seat_capacity\n        boolean active_flag\n    }\n    AVIATION__AIRPORTS {\n        integer airport_id PK\n        varchar_3 iata_code\n        varchar_150 airport_name\n        varchar_100 city\n        char_2 country_code\n        varchar_50 timezone\n    }\n    AVIATION__FLIGHTS {\n        varchar_20 flight_id PK\n        varchar_10 flight_number\n        integer departure_airport_id FK\n        integer arrival_airport_id FK\n        integer aircraft_id FK\n        timestamp scheduled_departure\n        timestamp scheduled_arrival\n    }\n    BOOKING__BOOKINGS {\n        varchar_20 booking_id PK\n        varchar_20 passenger_id FK\n        varchar_20 flight_id FK\n        varchar_20 booking_status\n        varchar_20 cabin_class\n        timestamp booked_at\n    }\n    BOOKING__PASSENGERS {\n        varchar_20 passenger_id PK\n        varchar_80 given_name\n        varchar_80 family_name\n        varchar_20 loyalty_tier\n        timestamp created_at\n    }\n    BOOKING__TICKETS {\n        varchar_30 ticket_id PK\n        varchar_20 booking_id FK\n        varchar_20 fare_basis\n        varchar_20 ticket_status\n        timestamp issued_at\n    }\n    OPERATIONS__BAGGAGE {\n        varchar_30 bag_tag_id PK\n        varchar_20 booking_id FK\n        varchar_20 flight_id FK\n        decimal_6_2 weight_kg\n        varchar_30 bag_status\n        timestamp accepted_at\n    }\n    OPERATIONS__FLIGHT_STATUS {\n        bigint status_event_id PK\n        varchar_20 flight_id FK\n        varchar_30 status_code\n        timestamp event_time\n        integer delay_minutes\n        varchar_250 remarks\n    }\n    OPERATIONS__ULD {\n        varchar_20 uld_id PK\n        varchar_20 uld_type\n        decimal_7_2 tare_weight_kg\n        decimal_8_2 maximum_weight_kg\n        boolean serviceable_flag\n    }\n    OPERATIONS__ULD_ASSIGNMENT {\n        varchar_30 assignment_id PK\n        varchar_20 uld_id FK\n        varchar_20 flight_id FK\n        varchar_20 load_position\n        timestamp closed_at\n        timestamp dispatched_at\n    }",
+  "sources": [
+    {
+      "excerpt": "Schema: aviation\nTable: flights\nQualified name: aviation.flights\nDescription: Scheduled flight instances with origin, destination, timings, and assigned aircraft.\nColumns:\n- flight_id: VARCHAR(20); PRIMARY KEY, NOT NULL, MAX LENGTH 20; Unique scheduled flight instance.\n- flight_number: VARCHAR(10); NOT NULL, MAX LENGTH 10; Commercial flight number.\n- departure_airport_id: INTEGER; NOT NULL; Origin airport identifier.\n- arrival_airport_id: INTEGER; NOT NULL; Destination airport identifier.\n- aircraft_id: INTEGER; NULLABLE; Assigned aircraft identifier.\n- scheduled_departure: TIMESTAMP; NOT NULL; Planned departure timestamp.\n- scheduled_arrival: TIMESTAMP; NOT NULL; Planned arrival timestamp.\nRelationships:\n- aviation.flights.departure_airport_id -> aviation.airports.airport_id; Many flights depart from one airport.\n- aviation.flights.arrival_airport_id -> aviation.airports.airport_id; Many flights arrive at one airport.\n- aviation.flights.aircraft_id -> aviation.aircraft.aircraft_id; An aircraft can operate many flight instances.\nTags: flight, schedule, departure, arrival, aircraft",
+      "qualified_name": "aviation.flights",
+      "score": 0.520455658
+    },
+    {
+      "excerpt": "Schema: aviation\nTable: aircraft\nQualified name: aviation.aircraft\nDescription: Master data for aircraft available for flight operations.\nColumns:\n- aircraft_id: INTEGER; PRIMARY KEY, NOT NULL; Surrogate aircraft identifier.\n- registration_number: VARCHAR(20); NOT NULL, MAX LENGTH 20; Synthetic aircraft registration.\n- aircraft_type: VARCHAR(50); NOT NULL, MAX LENGTH 50; Aircraft model such as A350-900.\n- seat_capacity: INTEGER; NOT NULL; Configured passenger seat capacity.\n- active_flag: BOOLEAN; NOT NULL; Whether the aircraft is active.\nRelationships:\n- No outbound foreign keys\nTags: aircraft, fleet, registration, capacity",
+      "qualified_name": "aviation.aircraft",
+      "score": 0.478790641
+    },
+    {
+      "excerpt": "Schema: aviation\nTable: airports\nQualified name: aviation.airports\nDescription: Reference data for airports served by the synthetic airline network.\nColumns:\n- airport_id: INTEGER; PRIMARY KEY, NOT NULL; Surrogate airport identifier.\n- iata_code: VARCHAR(3); NOT NULL, MAX LENGTH 3; Three-letter IATA airport code.\n- airport_name: VARCHAR(150); NOT NULL, MAX LENGTH 150; Airport display name.\n- city: VARCHAR(100); NOT NULL, MAX LENGTH 100; City served by the airport.\n- country_code: CHAR(2); NOT NULL, MAX LENGTH 2; ISO-style country code.\n- timezone: VARCHAR(50); NOT NULL, MAX LENGTH 50; Airport time zone.\nRelationships:\n- No outbound foreign keys\nTags: airport, reference, location, iata",
+      "qualified_name": "aviation.airports",
+      "score": 0.378015488
+    }
+  ],
+  "tool_trace": [
+    {
+      "status": "success",
+      "summary": "Retrieved 3 table(s): aviation.flights, aviation.aircraft, aviation.airports.",
+      "tool": "search_metadata"
+    },
+    {
+      "status": "success",
+      "summary": "Verified 11 relationship(s) across 10 table(s).",
+      "tool": "get_relationships"
+    },
+    {
+      "status": "success",
+      "summary": "Generated a validated ER diagram for 10 table(s).",
+      "tool": "generate_er_diagram"
+    }
+  ]
+}
