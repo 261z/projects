@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: games
+  labels:
+    env: workshop
+    version: "1"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: podinfo
+  namespace: games
+data:
+  PODINFO_UI_MESSAGE: "Hello from Geekshacking!"
+  PODINFO_UI_COLOR: "green"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podinfo
+  namespace: games
+  labels:
+    env: workshop
+spec:
+  containers:
+    - name: podinfo-container
+      image: chukmunnlee/2048:v1
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
+      envFrom:
+        - configMapRef:
+            name: podinfo

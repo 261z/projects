@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: geekshacking
+  labels:
+    env: workshop
+    version: "1"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: podinfo
+  namespace: geekshacking
+data:
+  PODINFO_UI_MESSAGE: "Hello from Geekshacking!"
+  PODINFO_UI_COLOR: "green"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podinfo
+  namespace: geekshacking
+  labels:
+    env: workshop
+spec:
+  containers:
+    - name: podinfo-container
+      image: stefanprodan/podinfo:6.14.1
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 9898
+      env:
+        - name: PODINFO_UI_MESSAGE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['dept']
+      envFrom:
+        - secretRef:
+            name: podinfo
