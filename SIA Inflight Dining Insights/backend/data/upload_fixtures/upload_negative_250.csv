@@ -1,0 +1,251 @@
+review_id,review,route,cabin,flight_date,language,meal
+UPLOAD-CSV-0001,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-01,English,braised chicken rice
+UPLOAD-CSV-0002,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-02,Singlish,fish with noodles
+UPLOAD-CSV-0003,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-03,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0004,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-04,Malay-English,beef rendang
+UPLOAD-CSV-0005,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-05,English,mushroom pasta
+UPLOAD-CSV-0006,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-06,Singlish,salmon with quinoa
+UPLOAD-CSV-0007,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-07,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0008,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-08,Malay-English,fish with noodles
+UPLOAD-CSV-0009,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-09,English,vegetarian biryani
+UPLOAD-CSV-0010,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-10,Singlish,beef rendang
+UPLOAD-CSV-0011,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-11,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0012,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-12,Malay-English,salmon with quinoa
+UPLOAD-CSV-0013,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-13,English,braised chicken rice
+UPLOAD-CSV-0014,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-14,Singlish,fish with noodles
+UPLOAD-CSV-0015,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-15,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0016,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-16,Malay-English,beef rendang
+UPLOAD-CSV-0017,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-17,English,mushroom pasta
+UPLOAD-CSV-0018,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-18,Singlish,salmon with quinoa
+UPLOAD-CSV-0019,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-19,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0020,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-20,Malay-English,fish with noodles
+UPLOAD-CSV-0021,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-21,English,vegetarian biryani
+UPLOAD-CSV-0022,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-22,Singlish,beef rendang
+UPLOAD-CSV-0023,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-23,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0024,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-24,Malay-English,salmon with quinoa
+UPLOAD-CSV-0025,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-25,English,braised chicken rice
+UPLOAD-CSV-0026,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-26,Singlish,fish with noodles
+UPLOAD-CSV-0027,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-27,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0028,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-01,Malay-English,beef rendang
+UPLOAD-CSV-0029,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-02,English,mushroom pasta
+UPLOAD-CSV-0030,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-03,Singlish,salmon with quinoa
+UPLOAD-CSV-0031,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-04,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0032,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-05,Malay-English,fish with noodles
+UPLOAD-CSV-0033,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-06,English,vegetarian biryani
+UPLOAD-CSV-0034,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-07,Singlish,beef rendang
+UPLOAD-CSV-0035,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-08-08,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0036,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-09-09,Malay-English,salmon with quinoa
+UPLOAD-CSV-0037,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-10,English,braised chicken rice
+UPLOAD-CSV-0038,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-11,Singlish,fish with noodles
+UPLOAD-CSV-0039,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-12,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0040,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-13,Malay-English,beef rendang
+UPLOAD-CSV-0041,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-14,English,mushroom pasta
+UPLOAD-CSV-0042,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-15,Singlish,salmon with quinoa
+UPLOAD-CSV-0043,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-16,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0044,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-17,Malay-English,fish with noodles
+UPLOAD-CSV-0045,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-18,English,vegetarian biryani
+UPLOAD-CSV-0046,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-19,Singlish,beef rendang
+UPLOAD-CSV-0047,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-20,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0048,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-21,Malay-English,salmon with quinoa
+UPLOAD-CSV-0049,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-22,English,braised chicken rice
+UPLOAD-CSV-0050,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-23,Singlish,fish with noodles
+UPLOAD-CSV-0051,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-24,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0052,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-25,Malay-English,beef rendang
+UPLOAD-CSV-0053,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-26,English,mushroom pasta
+UPLOAD-CSV-0054,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-27,Singlish,salmon with quinoa
+UPLOAD-CSV-0055,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-01,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0056,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-02,Malay-English,fish with noodles
+UPLOAD-CSV-0057,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-03,English,vegetarian biryani
+UPLOAD-CSV-0058,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-04,Singlish,beef rendang
+UPLOAD-CSV-0059,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-05,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0060,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-06,Malay-English,salmon with quinoa
+UPLOAD-CSV-0061,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-07,English,braised chicken rice
+UPLOAD-CSV-0062,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-08,Singlish,fish with noodles
+UPLOAD-CSV-0063,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-09,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0064,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-10,Malay-English,beef rendang
+UPLOAD-CSV-0065,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-11,English,mushroom pasta
+UPLOAD-CSV-0066,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-12,Singlish,salmon with quinoa
+UPLOAD-CSV-0067,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-13,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0068,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-14,Malay-English,fish with noodles
+UPLOAD-CSV-0069,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-15,English,vegetarian biryani
+UPLOAD-CSV-0070,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-16,Singlish,beef rendang
+UPLOAD-CSV-0071,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-08-17,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0072,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-09-18,Malay-English,salmon with quinoa
+UPLOAD-CSV-0073,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-19,English,braised chicken rice
+UPLOAD-CSV-0074,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-20,Singlish,fish with noodles
+UPLOAD-CSV-0075,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-21,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0076,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-22,Malay-English,beef rendang
+UPLOAD-CSV-0077,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-23,English,mushroom pasta
+UPLOAD-CSV-0078,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-24,Singlish,salmon with quinoa
+UPLOAD-CSV-0079,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-25,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0080,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-26,Malay-English,fish with noodles
+UPLOAD-CSV-0081,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-27,English,vegetarian biryani
+UPLOAD-CSV-0082,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-01,Singlish,beef rendang
+UPLOAD-CSV-0083,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-02,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0084,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-03,Malay-English,salmon with quinoa
+UPLOAD-CSV-0085,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-04,English,braised chicken rice
+UPLOAD-CSV-0086,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-05,Singlish,fish with noodles
+UPLOAD-CSV-0087,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-06,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0088,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-07,Malay-English,beef rendang
+UPLOAD-CSV-0089,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-08,English,mushroom pasta
+UPLOAD-CSV-0090,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-09,Singlish,salmon with quinoa
+UPLOAD-CSV-0091,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-10,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0092,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-11,Malay-English,fish with noodles
+UPLOAD-CSV-0093,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-12,English,vegetarian biryani
+UPLOAD-CSV-0094,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-13,Singlish,beef rendang
+UPLOAD-CSV-0095,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-14,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0096,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-15,Malay-English,salmon with quinoa
+UPLOAD-CSV-0097,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-16,English,braised chicken rice
+UPLOAD-CSV-0098,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-17,Singlish,fish with noodles
+UPLOAD-CSV-0099,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-18,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0100,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-19,Malay-English,beef rendang
+UPLOAD-CSV-0101,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-20,English,mushroom pasta
+UPLOAD-CSV-0102,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-21,Singlish,salmon with quinoa
+UPLOAD-CSV-0103,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-22,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0104,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-23,Malay-English,fish with noodles
+UPLOAD-CSV-0105,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-24,English,vegetarian biryani
+UPLOAD-CSV-0106,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-25,Singlish,beef rendang
+UPLOAD-CSV-0107,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-08-26,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0108,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-09-27,Malay-English,salmon with quinoa
+UPLOAD-CSV-0109,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-01,English,braised chicken rice
+UPLOAD-CSV-0110,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-02,Singlish,fish with noodles
+UPLOAD-CSV-0111,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-03,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0112,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-04,Malay-English,beef rendang
+UPLOAD-CSV-0113,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-05,English,mushroom pasta
+UPLOAD-CSV-0114,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-06,Singlish,salmon with quinoa
+UPLOAD-CSV-0115,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-07,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0116,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-08,Malay-English,fish with noodles
+UPLOAD-CSV-0117,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-09,English,vegetarian biryani
+UPLOAD-CSV-0118,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-10,Singlish,beef rendang
+UPLOAD-CSV-0119,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-11,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0120,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-12,Malay-English,salmon with quinoa
+UPLOAD-CSV-0121,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-13,English,braised chicken rice
+UPLOAD-CSV-0122,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-14,Singlish,fish with noodles
+UPLOAD-CSV-0123,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-15,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0124,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-16,Malay-English,beef rendang
+UPLOAD-CSV-0125,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-17,English,mushroom pasta
+UPLOAD-CSV-0126,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-18,Singlish,salmon with quinoa
+UPLOAD-CSV-0127,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-19,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0128,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-20,Malay-English,fish with noodles
+UPLOAD-CSV-0129,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-21,English,vegetarian biryani
+UPLOAD-CSV-0130,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-22,Singlish,beef rendang
+UPLOAD-CSV-0131,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-23,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0132,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-24,Malay-English,salmon with quinoa
+UPLOAD-CSV-0133,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-25,English,braised chicken rice
+UPLOAD-CSV-0134,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-26,Singlish,fish with noodles
+UPLOAD-CSV-0135,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-27,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0136,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-01,Malay-English,beef rendang
+UPLOAD-CSV-0137,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-02,English,mushroom pasta
+UPLOAD-CSV-0138,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-03,Singlish,salmon with quinoa
+UPLOAD-CSV-0139,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-04,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0140,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-05,Malay-English,fish with noodles
+UPLOAD-CSV-0141,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-06,English,vegetarian biryani
+UPLOAD-CSV-0142,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-07,Singlish,beef rendang
+UPLOAD-CSV-0143,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-08-08,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0144,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-09-09,Malay-English,salmon with quinoa
+UPLOAD-CSV-0145,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-10,English,braised chicken rice
+UPLOAD-CSV-0146,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-11,Singlish,fish with noodles
+UPLOAD-CSV-0147,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-12,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0148,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-13,Malay-English,beef rendang
+UPLOAD-CSV-0149,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-14,English,mushroom pasta
+UPLOAD-CSV-0150,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-15,Singlish,salmon with quinoa
+UPLOAD-CSV-0151,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-16,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0152,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-17,Malay-English,fish with noodles
+UPLOAD-CSV-0153,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-18,English,vegetarian biryani
+UPLOAD-CSV-0154,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-19,Singlish,beef rendang
+UPLOAD-CSV-0155,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-20,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0156,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-21,Malay-English,salmon with quinoa
+UPLOAD-CSV-0157,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-22,English,braised chicken rice
+UPLOAD-CSV-0158,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-23,Singlish,fish with noodles
+UPLOAD-CSV-0159,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-24,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0160,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-25,Malay-English,beef rendang
+UPLOAD-CSV-0161,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-26,English,mushroom pasta
+UPLOAD-CSV-0162,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-27,Singlish,salmon with quinoa
+UPLOAD-CSV-0163,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-01,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0164,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-02,Malay-English,fish with noodles
+UPLOAD-CSV-0165,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-03,English,vegetarian biryani
+UPLOAD-CSV-0166,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-04,Singlish,beef rendang
+UPLOAD-CSV-0167,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-05,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0168,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-06,Malay-English,salmon with quinoa
+UPLOAD-CSV-0169,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-07,English,braised chicken rice
+UPLOAD-CSV-0170,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-08,Singlish,fish with noodles
+UPLOAD-CSV-0171,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-09,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0172,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-10,Malay-English,beef rendang
+UPLOAD-CSV-0173,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-11,English,mushroom pasta
+UPLOAD-CSV-0174,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-12,Singlish,salmon with quinoa
+UPLOAD-CSV-0175,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-13,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0176,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-14,Malay-English,fish with noodles
+UPLOAD-CSV-0177,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-15,English,vegetarian biryani
+UPLOAD-CSV-0178,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-16,Singlish,beef rendang
+UPLOAD-CSV-0179,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-08-17,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0180,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-09-18,Malay-English,salmon with quinoa
+UPLOAD-CSV-0181,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-19,English,braised chicken rice
+UPLOAD-CSV-0182,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-20,Singlish,fish with noodles
+UPLOAD-CSV-0183,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-21,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0184,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-22,Malay-English,beef rendang
+UPLOAD-CSV-0185,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-23,English,mushroom pasta
+UPLOAD-CSV-0186,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-24,Singlish,salmon with quinoa
+UPLOAD-CSV-0187,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-25,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0188,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-26,Malay-English,fish with noodles
+UPLOAD-CSV-0189,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-27,English,vegetarian biryani
+UPLOAD-CSV-0190,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-01,Singlish,beef rendang
+UPLOAD-CSV-0191,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-02,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0192,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-03,Malay-English,salmon with quinoa
+UPLOAD-CSV-0193,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-04,English,braised chicken rice
+UPLOAD-CSV-0194,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-05,Singlish,fish with noodles
+UPLOAD-CSV-0195,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-06,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0196,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-07,Malay-English,beef rendang
+UPLOAD-CSV-0197,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-08,English,mushroom pasta
+UPLOAD-CSV-0198,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-09,Singlish,salmon with quinoa
+UPLOAD-CSV-0199,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-10,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0200,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-11,Malay-English,fish with noodles
+UPLOAD-CSV-0201,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-12,English,vegetarian biryani
+UPLOAD-CSV-0202,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-13,Singlish,beef rendang
+UPLOAD-CSV-0203,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-14,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0204,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-15,Malay-English,salmon with quinoa
+UPLOAD-CSV-0205,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-16,English,braised chicken rice
+UPLOAD-CSV-0206,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-17,Singlish,fish with noodles
+UPLOAD-CSV-0207,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-18,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0208,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-19,Malay-English,beef rendang
+UPLOAD-CSV-0209,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-20,English,mushroom pasta
+UPLOAD-CSV-0210,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-21,Singlish,salmon with quinoa
+UPLOAD-CSV-0211,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-22,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0212,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-23,Malay-English,fish with noodles
+UPLOAD-CSV-0213,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-24,English,vegetarian biryani
+UPLOAD-CSV-0214,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-25,Singlish,beef rendang
+UPLOAD-CSV-0215,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-08-26,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0216,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-09-27,Malay-English,salmon with quinoa
+UPLOAD-CSV-0217,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-01-01,English,braised chicken rice
+UPLOAD-CSV-0218,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-02-02,Singlish,fish with noodles
+UPLOAD-CSV-0219,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-03-03,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0220,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-04-04,Malay-English,beef rendang
+UPLOAD-CSV-0221,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-05-05,English,mushroom pasta
+UPLOAD-CSV-0222,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-06-06,Singlish,salmon with quinoa
+UPLOAD-CSV-0223,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-07-07,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0224,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-08-08,Malay-English,fish with noodles
+UPLOAD-CSV-0225,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-09-09,English,vegetarian biryani
+UPLOAD-CSV-0226,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-01-10,Singlish,beef rendang
+UPLOAD-CSV-0227,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-02-11,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0228,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-03-12,Malay-English,salmon with quinoa
+UPLOAD-CSV-0229,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-04-13,English,braised chicken rice
+UPLOAD-CSV-0230,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-05-14,Singlish,fish with noodles
+UPLOAD-CSV-0231,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-06-15,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0232,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-07-16,Malay-English,beef rendang
+UPLOAD-CSV-0233,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-08-17,English,mushroom pasta
+UPLOAD-CSV-0234,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-09-18,Singlish,salmon with quinoa
+UPLOAD-CSV-0235,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-01-19,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0236,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-02-20,Malay-English,fish with noodles
+UPLOAD-CSV-0237,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-03-21,English,vegetarian biryani
+UPLOAD-CSV-0238,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-04-22,Singlish,beef rendang
+UPLOAD-CSV-0239,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Business,2026-05-23,Mandarin-English,mushroom pasta
+UPLOAD-CSV-0240,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,Premium Economy,2026-06-24,Malay-English,salmon with quinoa
+UPLOAD-CSV-0241,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Economy,2026-07-25,English,braised chicken rice
+UPLOAD-CSV-0242,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,First,2026-08-26,Singlish,fish with noodles
+UPLOAD-CSV-0243,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Business,2026-09-27,Mandarin-English,vegetarian biryani
+UPLOAD-CSV-0244,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,Premium Economy,2026-01-01,Malay-English,beef rendang
+UPLOAD-CSV-0245,"Looks premium, tastes like a sad microwave apology. Bland and dry.",SIN-SFO,Economy,2026-02-02,English,mushroom pasta
+UPLOAD-CSV-0246,The sauce was burnt and the texture was unpleasant. I could not finish it.,SIN-SYD,First,2026-03-03,Singlish,salmon with quinoa
+UPLOAD-CSV-0247,The main was cold and the rice was dry; very disappointing for a long flight.,SIN-LHR,Business,2026-04-04,Mandarin-English,braised chicken rice
+UPLOAD-CSV-0248,"Too salty and the portion was small, so I stayed hungry. Really not good.",SIN-JFK,Premium Economy,2026-05-05,Malay-English,fish with noodles
+UPLOAD-CSV-0249,The fish was rubbery and the vegetables were soggy. This meal was awful.,SIN-CDG,Economy,2026-06-06,English,vegetarian biryani
+UPLOAD-CSV-0250,"My meal arrived late and cold, with a missing side. Very poor experience.",SIN-FRA,First,2026-07-07,Singlish,beef rendang

@@ -1,0 +1,14 @@
+[
+  {
+    "review_id": "SYN-0001",
+    "review": "The chicken was tender and the sauce was shiok, genuinely enjoyed it.",
+    "route": "SIN–LHR",
+    "destination": "Singapore–London",
+    "cabin": "Economy",
+    "flight_date": "2026-01-01",
+    "language": "English",
+    "meal": "braised chicken rice",
+    "seat": "1K",
+    "loyalty_tier": "KrisFlyer"
+  }
+]
